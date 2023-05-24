@@ -1,0 +1,11 @@
+<mapper namespace="User">
+    <!--根据条件查询单个-->
+    <select id="selectOne" resultType="com.xsy.pojo.User"
+            parameterType="com.xsy.pojo.User">
+        select * from user where id = #{id} and username = #{username}
+    </select>
+    <!--查询所有-->
+    <select id="selectList" resultType="com.xsy.pojo.User">
+        select * from user
+    </select>
+</mapper>
