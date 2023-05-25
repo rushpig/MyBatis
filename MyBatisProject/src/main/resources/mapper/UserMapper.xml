@@ -1,4 +1,4 @@
-<mapper namespace="User">
+<mapper namespace="com.xsy.dao.IUserDao">
     <!--根据条件查询单个-->
     <select id="selectOne" resultType="com.xsy.pojo.User"
             parameterType="com.xsy.pojo.User">

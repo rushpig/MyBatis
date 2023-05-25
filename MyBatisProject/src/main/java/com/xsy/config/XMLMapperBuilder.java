@@ -22,7 +22,7 @@ public class XMLMapperBuilder {
         Document document = new SAXReader().read(resourceAsSteam);
         Element rootElement = document.getRootElement();
 
-        List<Element> selectList = rootElement.elements("//select");
+        List<Element> selectList = rootElement.selectNodes("//select");
         String namespace = rootElement.attributeValue("namespace");
         for(Element element : selectList) {
             String id = element.attributeValue("id");

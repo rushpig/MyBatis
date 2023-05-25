@@ -18,6 +18,8 @@ public class SqlSessionFactoryBuilder {
         //1.解析配置文件，封装Configuration
         XMLConfigBuilder xmlConfigBuilder = new XMLConfigBuilder();
         Configuration configuration = xmlConfigBuilder.parse(inputStream);
+        System.out.println(configuration.getDataSource());
+        System.out.println(configuration.getMappedStatementMap());
 
         SqlSessionFactory defaultSqlSessionFactory = new DefaultSqlSessionFactory(configuration);
         return defaultSqlSessionFactory;

@@ -10,5 +10,8 @@ import java.util.List;
 
 public interface Executor {
 
-    <E> List<E> query(Configuration configuration, MappedStatement mappedStatement, Object params) throws SQLException, ClassNotFoundException, NoSuchFieldException, InstantiationException, IllegalAccessException, IntrospectionException, InvocationTargetException;
+    <E> List<E> query(Configuration configuration, MappedStatement mappedStatement, Object param) throws Exception;
+
+    void close();
 }
+
