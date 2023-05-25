@@ -1,7 +1,9 @@
 package com.xsy.dao;
 
+import com.xsy.pojo.User;
+
 import java.util.List;
 
 public interface IUserDao {
-    public List selectList();
+    public List<User> selectList();
 }

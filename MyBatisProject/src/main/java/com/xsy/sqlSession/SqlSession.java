@@ -17,4 +17,6 @@ public interface SqlSession {
      * 查询单个的方法
      */
     public <T> T selectOne(String statementId, Object parameter) throws Exception;
+
+    public <T> T getMapper(Class<?> mapperClass);
 }

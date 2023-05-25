@@ -1,5 +1,6 @@
 package com.xsy.pojo;
 
+import com.xsy.dao.IUserDao;
 import com.xsy.io.Resources;
 import com.xsy.sqlSession.SqlSession;
 import com.xsy.sqlSession.SqlSessionFactory;
@@ -37,17 +38,14 @@ public class MybatisTest {
         User user = new User();
         user.setId(1);
         user.setUsername("tom");
-        User user2 = sqlSession.selectOne("com.xsy.dao.IUserDao.selectList", user);
 
-        System.out.println(user2);
-        //List<User> list = sqlSession.selectList("user.selectList", null);
-//        for (User user1 : list) {
-//            System.out.println(user1);
-//        }
+       // User user2 = sqlSession.selectOne("com.xsy.dao.IUserDao.selectList", user);
 
-        // 5.释放资源
-      //  sqlSession.close();
+       // System.out.println(user2);
 
+        IUserDao iUserDao = sqlSession.getMapper(IUserDao.class);
+        List<User> list = iUserDao.selectList();
+        System.out.println(list.toString());
 
     }
 
